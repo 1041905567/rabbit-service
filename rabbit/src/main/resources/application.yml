@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: rabbit
+  rabbitmq:
+    host: 47.98.204.54
+    port: 5672
+    virtual-host: my_vhost
+    username: wenlin
+    password: 123456
+#    支持发布确认
+    publisher-confirms: true
+#    支持发布返回
+    publisher-returns: true
+    listener:
+      simple:
+#      采用手动应答
+        acknowledge-mode: manual
+#        当前监听容器数
+        concurrency: 10
+#        最大数
+        max-concurrency: 100
+#        是否支持重试
+        retry:
+          enabled: true
+server:
+  port: 1234
